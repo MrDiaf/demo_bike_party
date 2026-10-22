@@ -1,0 +1,8 @@
+Options -Indexes
+DirectoryIndex index.html
+
+# Project files and the source document are not part of the site
+<FilesMatch "^(README\.md|Makefile|router\.php|.*\.docx)$">
+    Require all denied
+</FilesMatch>
+RedirectMatch 404 ^.*/(guidelines|\.runtime)(/|$)

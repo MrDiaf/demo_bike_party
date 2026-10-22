@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cyclefest Route</title>
+  <meta name="description" content="Cyclefest bike party: where your group goes each round, with a map of Umeå.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">🚲</span>
+      <div>
+        <h1>Cyclefest</h1>
+        <p class="sub">Bike party · 3 rounds · Umeå</p>
+      </div>
+    </div>
+    <label class="picker">
+      <span>Your group</span>
+      <select id="group-select" aria-label="Choose your group">
+        <option value="">Choose…</option>
+      </select>
+    </label>
+  </header>
+
+  <main>
+    <section id="welcome" class="welcome" hidden>
+      <h2>Which group are you?</h2>
+      <p>Pick your group number to see where to go next. Your choice is remembered on this device.</p>
+      <div id="group-grid" class="group-grid"></div>
+    </section>
+
+    <section id="plan" class="layout" hidden>
+      <div class="panel">
+        <div id="now-banner" class="now-banner"></div>
+        <div class="tabs" role="tablist">
+          <button role="tab" id="tab-mine" aria-selected="true">My night</button>
+          <button role="tab" id="tab-all" aria-selected="false">All parties</button>
+        </div>
+        <div id="mine"></div>
+        <div id="all" hidden></div>
+      </div>
+      <div class="map-wrap">
+        <div id="map" aria-label="Map of Umeå with party locations"></div>
+        <div class="map-tools">
+          <button id="locate" type="button" title="Show my position">📍 Where am I?</button>
+          <button id="fit" type="button" title="Show the whole route">⤢ Whole route</button>
+        </div>
+        <div id="route-info" class="route-info" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    Map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors ·
+    bike routes by <a href="https://routing.openstreetmap.de/" target="_blank" rel="noopener">FOSSGIS OSRM</a> ·
+    pins marked “approx.” only match the street.
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
